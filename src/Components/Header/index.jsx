@@ -23,7 +23,7 @@ const BtnHeader = styled.a`
   margin: 0 10px;
   font-weight: 600;
   border: 2px solid white;
-  //desetructuracion
+  //destructuracion
   color: ${ ({primary}) => primary ? 'white' : colorPrimario };
   background: ${ (props) => props.primary ? 'transparent' : 'white' };
 `
