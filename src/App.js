@@ -8,20 +8,27 @@ import { ThemeProvider } from "styled-components";
 import { BtnTema } from "./Components/Variable";
 import SwitcherTema from "./Components/SwitcherTema";
 
-console.log(temaClaro,temaOscuro)
-
 function App() {
-  const [tema, setTema] = useState(true);
+  const [theme, setTheme] = useState(getInitialTheme);
+
+  useEffect(() => {
+    localStorage.setItem('theme', JSON.stringify(theme))
+  }, [theme])
+
+  function getInitialTheme() {
+    const savedTheme = localStorage.getItem('theme')
+    return savedTheme ? JSON.parse(savedTheme) : temaClaro;
+  }
 
   const toggleTema = () => {
-    setTema((tema) => !tema)
+    setTheme((theme) => !theme)
   }
 
   return (
-    <ThemeProvider theme={ tema ? temaClaro : temaOscuro }>
+    <ThemeProvider theme={ theme ? temaClaro : temaOscuro }>
       <GlobalStyle />
       <BtnTema onClick={toggleTema}>
-        <SwitcherTema tema={ tema }/>
+        <SwitcherTema theme ={ theme }/>
       </BtnTema>
       <Header />
       <Container />
