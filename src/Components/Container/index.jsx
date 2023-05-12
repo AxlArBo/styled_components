@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Title from "../Title";
 import Account from "../Account";
+import List from "../List";
 
 const StyledContainer = styled.div`
   background-color: #f1f1f1;
@@ -23,6 +24,7 @@ const Container = () => {
       <Title>Smart Bank</Title>
       <StyledContent className="content">
         <Account />
+        <List />
       </StyledContent>
     </StyledContainer>
   );
