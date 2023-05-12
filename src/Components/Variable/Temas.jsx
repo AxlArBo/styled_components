@@ -5,16 +5,18 @@ import {
     fondoOscuro,
     contenidoOscuro,
     textoFondoOscuro
-} from './Variable'
+} from './Variable';
 
 export const temaClaro = {
     body: fondoClaro,
     inside: contenidoClaro,
-    text: textoFondoClaro
-}
+    text: textoFondoClaro,
+    filter: '',
+};
 
 export const temaOscuro = {
     body: fondoOscuro,
     inside: contenidoOscuro,
-    text: textoFondoOscuro
-}
+    text: textoFondoOscuro,
+    filter: 'invert(100%)',
+};
